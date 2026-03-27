@@ -12,7 +12,7 @@ dependencies = [
     "pytest>=8",
     "regex>=2024.11.6",
     "torch~=2.6.0; sys_platform != 'darwin' or platform_machine != 'x86_64'",
-    "torch~=2.2.2; sys_platform == 'darwin' and platform_machine == 'x86_64'", # Intel Macs
+    "torch~=2.2.2; sys_platform == 'darwin' and platform_machine == 'x86_64' and python_version < '3.12'", # Intel Macs are limited to older torch wheels
     "tqdm>=4.67.1",
     "wandb>=0.19.7",
     "pandas>=2",
@@ -30,9 +30,20 @@ module-root = ""
 [tool.uv]
 package = true
 python-preference = "managed"
+environments = [
+    "sys_platform == 'win32'",
+    "sys_platform == 'linux'",
+    "sys_platform == 'darwin' and platform_machine == 'arm64'",
+]
 
 [tool.uv.sources]
 cs336-basics = { path = "./cs336-basics", editable = true }  # Change this path to your assignment1-basics repo you want to use your own implementation!
+torch = [{ index = "pytorch-cu124", marker = "sys_platform == 'win32' or sys_platform == 'linux'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
 
 
 
