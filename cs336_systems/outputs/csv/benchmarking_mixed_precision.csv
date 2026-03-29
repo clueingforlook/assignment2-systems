@@ -1,0 +1,21 @@
+model_size,precision,pass_type,warmup_steps,measured_steps,mean_s,std_s,status,error_message
+small,fp32,forward,3,10,0.041707099999803175,0.0032559081076246627,ok,
+small,fp32,backward,3,10,0.061574010000276756,0.013791665024310463,ok,
+small,bf16_mixed,forward,3,10,0.05089055999978882,0.006020145265062756,ok,
+small,bf16_mixed,backward,3,10,0.06692995000030351,0.008970199057280864,ok,
+medium,fp32,forward,3,10,0.09229785000006814,0.007941920534415326,ok,
+medium,fp32,backward,3,10,0.1422647399997004,0.008185576264370898,ok,
+medium,bf16_mixed,forward,3,10,0.08602060999992318,0.0026790807570284242,ok,
+medium,bf16_mixed,backward,3,10,0.1289629199999581,0.006929231352958714,ok,
+large,fp32,forward,3,10,0.15259107999982008,0.0016935492130577927,ok,
+large,fp32,backward,3,10,0.8402795500001048,0.011024479738019247,ok,
+large,bf16_mixed,forward,3,10,0.12970370000002732,0.0034977998951096034,ok,
+large,bf16_mixed,backward,3,10,8.935833420000018,0.023880588926159678,ok,
+xl,fp32,forward,3,10,12.712375489999976,0.025113457044245644,ok,
+xl,fp32,backward,3,10,,,oom,"Backward estimate unavailable because forward-backward benchmark failed: CUDA out of memory. Tried to allocate 40.00 MiB. GPU 0 has a total capacity of 8.00 GiB of which 0 bytes is free. Of the allocated memory 13.90 GiB is allocated by PyTorch, and 724.29 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+xl,bf16_mixed,forward,3,10,9.767482799999835,0.15781500660920633,ok,
+xl,bf16_mixed,backward,3,10,,,oom,"Backward estimate unavailable because forward-backward benchmark failed: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 0 has a total capacity of 8.00 GiB of which 0 bytes is free. Of the allocated memory 14.33 GiB is allocated by PyTorch, and 278.50 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+2.7B,fp32,forward,3,10,9.41272885999997,0.029357227234163234,ok,
+2.7B,fp32,backward,3,10,,,oom,"Backward estimate unavailable because forward-backward benchmark failed: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 0 has a total capacity of 8.00 GiB of which 0 bytes is free. Of the allocated memory 14.53 GiB is allocated by PyTorch, and 71.06 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+2.7B,bf16_mixed,forward,3,10,,,oom,"CUDA out of memory. Tried to allocate 50.00 MiB. GPU 0 has a total capacity of 8.00 GiB of which 0 bytes is free. Of the allocated memory 14.52 GiB is allocated by PyTorch, and 76.07 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
+2.7B,bf16_mixed,backward,3,10,,,oom,"Backward estimate unavailable because forward benchmark failed: CUDA out of memory. Tried to allocate 50.00 MiB. GPU 0 has a total capacity of 8.00 GiB of which 0 bytes is free. Of the allocated memory 14.52 GiB is allocated by PyTorch, and 76.07 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)"
